@@ -39,19 +39,43 @@
         // Sample data
         const data = {
             nodes: [
-                {name: "A1"},
-                {name: "A2"},
-                {name: "B1"},
-                {name: "B2"},
-                {name: "C1"},
-                {name: "C2"},
-                {name: "D1"},
-                {name: "D2"},
-                {name: "E1"},
-                {name: "E2"},
-                {name: "F1"},
-                {name: "F2"}
-            ],
+                // Air Platforms
+                {name: "Fighter Aircraft"},
+                {name: "Bomber Aircraft"},
+                {name: "Unmanned Aerial Vehicle"},
+                {name: "Attack Helicopter"},
+                {name: "Transport Helicopter"},
+                {name: "AEW&C Aircraft"}, 
+                {name: "Tanker Aircraft"},
+
+                // Ground Platforms
+                {name: "Main Battle Tank"},
+                {name: "Armored Personnel Carrier"}, 
+                {name: "Artillery System"},
+                {name: "Air Defense System"}, 
+                {name: "Infantry Fighting Vehicle"},
+                {name: "Anti-Tank Guided Missile System"},
+                {name: "Man-Portable Air-Defense System"},
+
+                // Naval Platforms
+                {name: "Surface Combatant"},
+                {name: "Submarine (SSK)"},
+                {name: "Submarine (SSN)"},
+                {name: "Submarine (SSBN)"},
+                {name: "Mine Countermeasures Vessel"},
+                {name: "Amphibious Assault Ship"},
+                {name: "Patrol Boat"},
+                {name: "Aircraft Carrier"},
+
+                // Other Platforms
+                {name: "Ballistic Missile"}, 
+                {name: "Cruise Missile"},
+                {name: "Electronic Warfare System"},
+                {name: "Radar System"},
+                {name: "Command and Control Vehicle"},
+                {name: "Unmanned Ground Vehicle"},
+                {name: "Satellite"} 
+],
             links: [
                 {source: 0, target: 2, value: 2},
                 {source: 0, target: 3, value: 1},
@@ -145,7 +169,7 @@
             .text(d => d.name);
 
         // Add column labels
-        const columns = ['Column A', 'Column B', 'Column C', 'Column D', 'Column E', 'Column F'];
+        const columns = ['Find', 'Fix', 'Track', 'Target', 'Engage', 'Assess'];
         const columnWidth = width / (columns.length - 1);
         
         svg.append("g")
