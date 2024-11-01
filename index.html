@@ -113,12 +113,10 @@
                 d3.select(this)
                     .attr("transform", `translate(${d.x0},${d.y0})`);
                 
+                // Recalculate Sankey layout
+                sankey.update({nodes: nodes, links: links});
+                
                 // Update links in real-time
-                svg.selectAll(".link")
-                    .attr("d", d3.sankeyLinkHorizontal());
-            })
-            .on("end", function(event, d) {
-                // Final update of links
                 svg.selectAll(".link")
                     .attr("d", d3.sankeyLinkHorizontal());
             });
