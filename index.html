@@ -20,6 +20,11 @@
         .link:hover {
             stroke-opacity: 0.8;
         }
+        .column-label {
+            font-size: 1em;
+            font-weight: bold;
+            text-anchor: middle;
+        }
     </style>
 </head>
 <body>
@@ -111,6 +116,19 @@
             .attr("dy", "0.35em")
             .attr("text-anchor", d => (d.x0 < width / 2) ? "start" : "end")
             .text(d => d.name);
+
+        // Add column labels
+        const columns = ['Column A', 'Column B', 'Column C', 'Column D', 'Column E', 'Column F'];
+        const columnWidth = width / (columns.length - 1);
+        
+        svg.append("g")
+            .selectAll("text")
+            .data(columns)
+            .join("text")
+            .attr("class", "column-label")
+            .attr("x", (d, i) => i * columnWidth)
+            .attr("y", -20)
+            .text(d => d);
     </script>
 </body>
 </html>
